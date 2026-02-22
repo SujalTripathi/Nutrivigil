@@ -3,7 +3,14 @@
 
   "nav": {
     "home": "Home",
-    "profile": "My Profile"
+    "profile": "My Profile",
+    "myProfile": "My Profile",
+    "browseFoods": "Browse Foods",
+    "protocol": "Protocol",
+    "appInterface": "App Interface",
+    "nutrition": "Nutrition",
+    "howItWorks": "How It Works",
+    "language": "EN"
   },
 
   "home": {

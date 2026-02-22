@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon, Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useThemeTranslation } from "../hooks/useThemeTranslation";
 import { useTheme } from "../contexts/ThemeContext";
 import { useState } from "react";
@@ -10,7 +11,7 @@ import LanguagePicker from "./LanguagePicker";
 const Navbar = () => {
   const { pathname } = useLocation();
   const { theme, toggleTheme } = useTheme();
-  const { t } = useThemeTranslation();
+  const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItem = (path, label, isMobile = false) => (
@@ -66,12 +67,12 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
           {navItem("/", t("nav.home"))}
-          {navItem("/profile", t("nav.profile"))}
-          {navItem("/browse", "Browse Foods")}
-          {navItem("/protocol", "Protocol")}
-          {navItem("/app", "App Interface")}
-          {navItem("/nutrition", "Nutrition")}
-          {navItem("/how-it-works", "How It Works")}
+          {navItem("/profile", t("nav.myProfile"))}
+          {navItem("/browse", t("nav.browseFoods"))}
+          {navItem("/protocol", t("nav.protocol"))}
+          {navItem("/app", t("nav.appInterface"))}
+          {navItem("/nutrition", t("nav.nutrition"))}
+          {navItem("/how-it-works", t("nav.howItWorks"))}
         </div>
 
         {/* Right Actions */}
@@ -159,12 +160,12 @@ const Navbar = () => {
           >
             <div className="px-4 py-4 flex flex-col gap-2">
               {navItem("/", t("nav.home"), true)}
-              {navItem("/profile", t("nav.profile"), true)}
-              {navItem("/browse", "Browse Foods", true)}
-              {navItem("/protocol", "Protocol", true)}
-              {navItem("/app", "App Interface", true)}
-              {navItem("/nutrition", "Nutrition", true)}
-              {navItem("/how-it-works", "How It Works", true)}
+              {navItem("/profile", t("nav.myProfile"), true)}
+              {navItem("/browse", t("nav.browseFoods"), true)}
+              {navItem("/protocol", t("nav.protocol"), true)}
+              {navItem("/app", t("nav.appInterface"), true)}
+              {navItem("/nutrition", t("nav.nutrition"), true)}
+              {navItem("/how-it-works", t("nav.howItWorks"), true)}
             </div>
           </motion.div>
         )}
